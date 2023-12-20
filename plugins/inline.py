@@ -59,7 +59,7 @@ async def answer(bot, query):
         f_caption=file.caption
         if CUSTOM_FILE_CAPTION:
             try:
-                f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+                f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='@armoviechat')
             except Exception as e:
                 logger.exception(e)
                 f_caption=f_caption
@@ -74,7 +74,7 @@ async def answer(bot, query):
                 reply_markup=reply_markup))
 
     if results:
-        switch_pm_text = f"{emoji.FILE_FOLDER} Results - {total}"
+        switch_pm_text = f"@armoviechat{emoji.FILE_FOLDER} Results - {total}"
         if string:
             switch_pm_text += f" for {string}"
         try:
